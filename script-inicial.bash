@@ -1,19 +1,20 @@
 #!/bin/bash
 #
-# Baseado no script de Franklin Moraes
-# http://gitgub.com/fvmoraes
-#
-# Autor: Lucas de Oliveira
+# Autor: Lucas de Oliveira.
 # http://github.com/martinslo
 #
-# Script de pós instalação para Ubuntu 16.04
+# Coautor: Franklin Vinicius Moraes.
+# http://gitgub.com/fvmoraes
 #
-principal()
+# Script de pós instalação para Ubuntu 16.04.
+#
+principal()	#Função principal, inicio
 {	
-	clear #limpa a tela
-	echo "Script de pós instalação para Ubuntu 16.04 LTS" #escreve na tela
-	echo "Escolha uma opção:"
+	clear	#Limpa a tela.
+	echo "Script de pós instalação para Ubuntu 16.04 LTS"	#Escreve na tela as opções para uso.
+	echo "Escolha uma opção:"	#Solicita ao usuário escolher uma opção
 	echo "                  "
+	#Aqui começa as opções.
 	echo "[1] Atualizar a lista de repositórios"
 	echo "[2] Atualizar os programas e opções de segurança"
 	echo "[3] Atualizar kernel e programas"
@@ -21,45 +22,47 @@ principal()
 	echo "[5] Atualizar referências do sistema"
 	echo "[6] Ferramentas de rede"
 	echo "[7] Retirar conta de convidado"
+	#Aqui termina as opções
 
-	read opcao
-	case $opcao in
-
+	read opcao	#Aguarda o usuário escolher uma opção.
+	case $opcao in	#inicia o switch/case e utiliza o captado pela variável $opcao para selecionar uma das seguintes opções;
+	#Aqui começa as opções.
 	1)
-	clear
-	atualiza_repositorio
+	clear	#Limpa a tela.
+	atualiza_repositorio	#Chama a função atualiza_repositorio
 	;;
 
 	2)
-	clear
-	atualiza_programas
+	clear	#Limpa a tela.
+	atualiza_programas	#Chama a função atualiza_programas.
 	;;
 
 	3)
-	clear
-	atualiza_kernel
+	clear	#Limpa a tela.
+	atualiza_kernel	#Chama a função atualiza_kernel.
 	;;
 
 	4)
-	clear
-	atualiza_tudo
+	clear	#Limpa a tela.
+	atualiza_tudo	#Chama a função atualiza_tudo.
 	;;
 
 	5)
-	clear
-	atualizadb
+	clear	#Limpa a tela.
+	atualizadb	#Chama a função atualizadb
 	;;
 
 	6)
-	clear
-	ferramentas_rede
+	clear	#Limpa a tela.
+	ferramentas_rede	#Chama a função ferramentas_rede
 	;;
 
 	7)
-	clear
-	retira_conta
-	esac
-}
+	clear	#Limpa a tela.
+	retira_conta	#Chama a função retira_conta
+	#Aqui termina as opções
+	esac	#Termina o switch/case
+}	#Função principal, fim
 
 atualiza_repositorio()
 {
