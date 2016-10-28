@@ -4,7 +4,7 @@
 # http://gitgub.com/fvmoraes
 #
 # Autor: Lucas de Oliveira
-# http://github.com/lmoliveira
+# http://github.com/martinslo
 #
 # Script de pós instalação para Ubuntu 16.04
 #
