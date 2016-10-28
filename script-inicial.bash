@@ -201,6 +201,17 @@ instalar_nmap()
 	read pause
 	ferramentas_rede
 }
+instalar_zenmap()
+{
+	clear
+	sudo apt-get install -y zenmap
+	clear
+	echo "ZenMap instalado com sucesso"
+	echo ""
+	echo "Pressione ENTER para continuar"
+	read pause
+	ferramentas_rede
+}
 retira_conta()
 {
 	clear
