@@ -21,7 +21,8 @@ principal()	#Função principal, inicio.
 	echo "[4] Atualização completa do sistema"
 	echo "[5] Atualizar referências do sistema"
 	echo "[6] Ferramentas de rede"
-	echo "[7] Retirar conta de convidado"
+	echo "[7] Navegadores"
+	echo "[8] Retirar conta de convidado"
 	#Aqui termina as opções.
 
 	read opcao	#Aguarda o usuário escolher uma opção.
@@ -56,8 +57,13 @@ principal()	#Função principal, inicio.
 	clear	#Limpa a tela.
 	ferramentas_rede	#Chama a função ferramentas_rede.
 	;;	#Fim desta opção do case.
-
+	
 	7)
+	clear	#Limpa a tela.
+	navegadores	#Chama a função navegadores.
+	;;	#Fim desta opção do case.
+	
+	8)
 	clear	#Limpa a tela.
 	retira_conta	#Chama a função retira_conta.
 	;;	#Fim desta opção do case.
@@ -211,6 +217,56 @@ ferramentas_rede()	#Função ferramentas_rede, inicio
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
 }	#Função ferramentas_rede, fim.
+navegadores()
+{
+	clear	#Limpa a tela.
+	echo "Navegadores"	#Escreve na tela as opções para uso.
+	echo "Escolha uma opção:"	#Solicita ao usuário escolher uma opção.
+	echo ""	#Espaçamento para melhorar a visualização.
+	#Aqui começa as opções.
+	echo "[1] Instalar Google Chrome"
+	echo "[2] Instalar Mozilla Firefox"
+	echo "[3] Instalar Opera"
+	echo "[4] Instalar Tor Browser"
+	echo "[5] Voltar"
+	#Aqui termina as opções.
+
+	read opcaoNavegador	#Aguarda o usuário escolher uma opção.
+	case $opcaoNavegador in	#inicia o switch/case e utiliza o captado pela variável $opcaoRede para selecionar uma das seguintes opções;
+	#Aqui começa as opções do case.
+	1)
+	clear	#Limpa a tela.
+	instalar_googlechrome	#Chama a função instalar_googlechrome.
+	;;	#Fim desta opção do case.
+
+	2)
+	clear	#Limpa a tela.
+	instalar_mozillafirefox	#Chama a função instalar_mozillafirefox.
+	;;	#Fim desta opção do case.
+
+	3)
+	clear	#Limpa a tela.
+	instalar_opera	#Chama a função instalar_opera.
+	;;	#Fim desta opção do case.
+	
+	4)
+	clear	#Limpa a tela.
+	instalar_tor	#Chama a função instalar_tor.
+	;;	#Fim desta opção do case.
+
+	5)
+	clear	#Limpa a tela.
+	principal	#Chama a função principal.
+	;;	#Fim desta opção do case
+	# ESTA OPÇÃO [*)] OBRIGATORIAMENTE PRECISA FICAR ABAIXO DE TODAS, POR ULTIMO, [POIS ELA ACEITA *ALL*]!!!
+	*)
+	clear	#Limpa a tela.
+	opcao_desconhecida	#Chama a função opcao_desconhecida.
+	navegadores	#Chama a funçao navegadores.
+	;;	#Fim desta opção do case
+	#Aqui termina as opções do case.
+	esac	#Termina o switch/case.
+}	#Função navegadores, fim.
 instalar_nmap()	#Função instalar_nmap, inicio.
 {
 	clear	#Limpa a tela.
@@ -312,6 +368,19 @@ instalar_remmina()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_remmina, fim.
+instalar_googlechrome()
+{
+	clear	#Limpa a tela.
+	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+	sudo apt-get update ; sudo apt-get install google-chrome-stable -y
+	clear	#Limpa a tela.
+	echo "Google Chrome instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	navegadores	#Retorno a função navegadores de sub-menu.
+}
 retira_conta()	#Função retira_conta, inicio.
 {
 	clear	#Limpa a tela.
