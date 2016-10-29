@@ -40,15 +40,27 @@ R: Hoje o script tem as seguintes funções:
     
     [9] Instalação Remmina;
     
-[7] Retirada da conta de convidado;
+[7] Navegadores:
+
+    [1] Instalar Google Chrome;
+    
+    [2] Instalar Mozilla Firefox;
+    
+    [3] Instalar Opera;
+    
+    [4] Instalar Tor Browser
+    
+[8] Retirada da conta de convidado;
 
 Para executar este script, após o download você abrirá o Terminal e irá procurar o script na pasta de Downloads com o seguinte comando:
 
-cd /home/seu-usuario/Downloads * seu-usuario refere-se ao seu nome de usuário
+cd /home/seu-usuario/Downloads 
+
+Obs.: "seu-usuario" refere-se ao nome de usuário que você possui
 
 bash script-inicial.bash
 
 E escolha a opção que deseja.
 
-Última atualização em: 29/10/2016 às 11:19 (Horário brasileiro)
+Última atualização em: 29/10/2016 às 13:24 (Horário brasileiro)
 
