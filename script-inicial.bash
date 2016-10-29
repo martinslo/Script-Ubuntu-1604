@@ -232,7 +232,86 @@ instalar_zenmap()	#Função instalar_znmap, inicio.
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
-}	#Função instalar_znmap, fim.
+}	#Função instalar_zenmap, fim.
+instalar_putty()
+{
+	clear	#Limpa a tela.
+	sudo apt-get install -y putty
+	clear	#Limpa a tela.
+	echo "Putty instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_putty, fim.
+instalar_iptraf()
+{
+	clear	#Limpa a tela.
+	sudo apt-get install -y iptraf
+	clear	#Limpa a tela.
+	echo "IpTraf instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_iptraf, fim.
+instalar_tcpdump()
+{
+	clear	#Limpa a tela.
+	sudo apt-get install -y tcpdump
+	clear	#Limpa a tela.
+	echo "TCPDump instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_tcpdump, fim.
+instalar_vnstat()
+{
+	clear	#Limpa a tela.
+	sudo apt-get install -y vnstat
+	clear	#Limpa a tela.
+	echo "VNStat instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_vnstat, fim.
+instalar_iperf()
+{
+	clear	#Limpa a tela.
+	sudo apt-get install -y iperf
+	clear	#Limpa a tela.
+	echo "Iperf instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_iperf, fim.
+instalar_wireshark()
+{
+	clear	#Limpa a tela.
+	sudo apt-get -y install wireshark wireshark-common wireshark-dev
+	clear	#Limpa a tela.
+	echo "Wireshark instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_wireshark, fim.
+instalar_remmina()
+{
+	clear	#Limpa a tela.
+	sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
+	sudo apt-get update
+	sudo apt-get install -y remmina remmina-plugin-rdp libfreerdp-plugins-standard
+	clear	#Limpa a tela.
+	echo "Remmina instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
+}	#Função instalar_remmina, fim.
 retira_conta()	#Função retira_conta, inicio.
 {
 	clear	#Limpa a tela.
