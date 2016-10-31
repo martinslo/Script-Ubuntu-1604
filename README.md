@@ -1,7 +1,8 @@
 # Script de pós instalação para Ubuntu 16.04 LTS
 
-	Devido as infinitas possibilidades que possuímos hoje no mundo GNU/Linux, existe um número massante de tutoriais e blogs informando como instalar tal programa ou como efetuar tal tarefa dentro do sistema operacional. Com isso, foi criado este projeto, com intuito de auxiliar a quem está chegando no mundo GNU/Linux ou até os mais experientes que por vezes se perguntam o que instalar e aonde procurar.
-	O script contido neste repositório possui inumeros comandos para instalação, na qual o usuário poderá navegar e escolher ou não executa-los. Este é um projeto novo, e serão muito bem recebidas as alterações que posteriormente outros desenvolvedores venham a propor.
+Devido as infinitas possibilidades que possuímos hoje no mundo GNU/Linux, existe um número massante de tutoriais e blogs informando como instalar tal programa ou como efetuar tal tarefa dentro do sistema operacional. Com isso, foi criado este projeto, com intuito de auxiliar a quem está chegando no mundo GNU/Linux ou até os mais experientes que por vezes se perguntam o que instalar e aonde procurar.
+
+O script contido neste repositório possui inumeros comandos para instalação, na qual o usuário poderá navegar e escolher ou não executa-los. Este é um projeto novo, e serão muito bem recebidas as alterações que posteriormente outros desenvolvedores venham a propor.
 
 Até o momento a estrutura do script possui as seguintes funções:
 
