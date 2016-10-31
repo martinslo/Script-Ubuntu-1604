@@ -319,7 +319,7 @@ ides()
 }	#Função navegadores, fim.
 complementos_sistema()
 {
-clear	#Limpa a tela.
+	clear	#Limpa a tela.
 	echo "Complementos do sistema"	#Escreve na tela as opções para uso.
 	echo "Escolha uma opção:"	#Solicita ao usuário escolher uma opção.
 	echo ""	#Espaçamento para melhorar a visualização.
@@ -333,10 +333,52 @@ clear	#Limpa a tela.
 	#Aqui começa as opções do case.
 	1)
 	clear	#Limpa a tela.
-	instalar_java	#Chama a função instalar_netbeans.
+	instalar_java	#Chama a função instalar_java.
 	;;	#Fim desta opção do case.
 
 	2)
+	clear	#Limpa a tela.
+	principal	#Chama a função principal.
+	;;	#Fim desta opção do case
+	# ESTA OPÇÃO [*)] OBRIGATORIAMENTE PRECISA FICAR ABAIXO DE TODAS, POR ULTIMO, [POIS ELA ACEITA *ALL*]!!!
+	
+	*)
+	clear	#Limpa a tela.
+	opcao_desconhecida	#Chama a função opcao_desconhecida.
+	ides	#Chama a funçao navegadores.
+	;;	#Fim desta opção do case
+	#Aqui termina as opções do case.
+	esac	#Termina o switch/case.
+}	#Função complementos_sistema, fim.
+configuracoes_sistema()
+{
+}
+utilitarios()
+{
+	clear	#Limpa a tela.
+	echo "Utilitários"	#Escreve na tela as opções para uso.
+	echo "Escolha uma opção:"	#Solicita ao usuário escolher uma opção.
+	echo ""	#Espaçamento para melhorar a visualização.
+	#Aqui começa as opções.
+	echo "[1] Instalar TeamViewer"
+	echo "[2] Instalar VLC"
+	echo "[3] Voltar"
+	#Aqui termina as opções.
+
+	read opcaoUtilitarios	#Aguarda o usuário escolher uma opção.
+	case $opcaoUtilitarios in	#inicia o switch/case e utiliza o captado pela variável $opcaoRede para selecionar uma das seguintes opções;
+	#Aqui começa as opções do case.
+	1)
+	clear	#Limpa a tela.
+	instalar_teamviewer	#Chama a função instalar_teamviewer.
+	;;	#Fim desta opção do case.
+	
+	2)
+	clear	#Limpa a tela.
+	instalar_vlc	#Chama a função instalar_teamviewer.
+	;;	#Fim desta opção do case.
+
+	3)
 	clear	#Limpa a tela.
 	principal	#Chama a função principal.
 	;;	#Fim desta opção do case
@@ -457,9 +499,8 @@ instalar_remmina()
 instalar_googlechrome()
 {
 	clear	#Limpa a tela.
-	wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-	sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-	sudo apt-get update ; sudo apt-get install google-chrome-stable -y
+   	wget - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome-stable_current_amd64.deb
 	clear	#Limpa a tela.
 	echo "Google Chrome instalado com sucesso"	#Infomação ao usuário.
 	echo ""	#Espaçamento para melhorar a visualização.
@@ -470,7 +511,8 @@ instalar_googlechrome()
 instalar_netbeans()
 {
 	clear	#Limpa a tela.
-	wget -q -O - http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-linux.sh | bash
+	wget - http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-linux.sh
+	sh -i netbeans-8.2-linux.sh
 	clear	#Limpa a tela.
 	echo "Netbeans instalado com sucesso"	#Infomação ao usuário.
 	echo ""	#Espaçamento para melhorar a visualização.
@@ -490,6 +532,32 @@ instalar_java()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	complementos_sistema	#Retorno a função complementos_sistema de sub-menu.
+}
+instalar_teamviewer()
+{
+	clear	#Limpa a tela.
+	wget - https://download.teamviewer.com/download/teamviewer_i386.deb | sudo dpkg -i teamviewer_i386.deb
+	sudo dpkg -i teamviewer_i386.deb
+	sudo apt install -f
+	clear	#Limpa a tela.
+	echo "TeamViewer instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	utilitarios	#Retorno a função utilitarios de sub-menu.
+}
+instalar_vlc()
+{
+	clear	#Limpa a tela.
+	sudo add-apt-repository ppa:videolan/stable-daily -y
+	sudo apt update
+	sudo apt install vlc -y
+	clear	#Limpa a tela.
+	echo "VLC instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	utilitarios	#Retorno a função utilitarios de sub-menu.
 }
 retira_conta()	#Função retira_conta, inicio.
 {
