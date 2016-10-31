@@ -23,7 +23,10 @@ principal()	#Função principal, inicio.
 	echo "[6] Ferramentas de rede"
 	echo "[7] Navegadores"
 	echo "[8] IDE's"
-	echo "[9] Retirar conta de convidado"
+	echo "[9] Complementos do sistema"
+	echo "[10] Configurações do sistema"
+	echo "[11] Utilitários"
+	echo "[12] Retirar conta de convidado"
 	#Aqui termina as opções.
 
 	read opcao	#Aguarda o usuário escolher uma opção.
@@ -70,6 +73,11 @@ principal()	#Função principal, inicio.
 	;;	#Fim desta opção do case.
 	
 	9)
+	clear	#Limpa a tela.
+	complementos_sistema	#Chama a função complementos_sistema.
+	;;	#Fim desta opção do case.
+	
+	12)
 	clear	#Limpa a tela.
 	retira_conta	#Chama a função retira_conta.
 	;;	#Fim desta opção do case.
@@ -143,6 +151,9 @@ atualizadb()	#Função atualizadb, inicio.
 	read pause	#Comando para aguardar interação[ENTER]
 	principal	#Retorno a função principal de menus
 }	#Função atualizadb, fim.
+#-------------------------------------------------------------------------------------------------------------------------------
+# Funções com menu
+#-------------------------------------------------------------------------------------------------------------------------------
 ferramentas_rede()	#Função ferramentas_rede, inicio
 {
 	clear	#Limpa a tela.
@@ -275,7 +286,7 @@ navegadores()
 }	#Função navegadores, fim.
 ides()
 {
-clear	#Limpa a tela.
+	clear	#Limpa a tela.
 	echo "IDE's"	#Escreve na tela as opções para uso.
 	echo "Escolha uma opção:"	#Solicita ao usuário escolher uma opção.
 	echo ""	#Espaçamento para melhorar a visualização.
@@ -306,6 +317,42 @@ clear	#Limpa a tela.
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
 }	#Função navegadores, fim.
+complementos_sistema()
+{
+clear	#Limpa a tela.
+	echo "Complementos do sistema"	#Escreve na tela as opções para uso.
+	echo "Escolha uma opção:"	#Solicita ao usuário escolher uma opção.
+	echo ""	#Espaçamento para melhorar a visualização.
+	#Aqui começa as opções.
+	echo "[1] Instalar Java"
+	echo "[2] Voltar"
+	#Aqui termina as opções.
+
+	read opcaoComplementos	#Aguarda o usuário escolher uma opção.
+	case $opcaoComplementos in	#inicia o switch/case e utiliza o captado pela variável $opcaoRede para selecionar uma das seguintes opções;
+	#Aqui começa as opções do case.
+	1)
+	clear	#Limpa a tela.
+	instalar_java	#Chama a função instalar_netbeans.
+	;;	#Fim desta opção do case.
+
+	2)
+	clear	#Limpa a tela.
+	principal	#Chama a função principal.
+	;;	#Fim desta opção do case
+	# ESTA OPÇÃO [*)] OBRIGATORIAMENTE PRECISA FICAR ABAIXO DE TODAS, POR ULTIMO, [POIS ELA ACEITA *ALL*]!!!
+	
+	*)
+	clear	#Limpa a tela.
+	opcao_desconhecida	#Chama a função opcao_desconhecida.
+	ides	#Chama a funçao navegadores.
+	;;	#Fim desta opção do case
+	#Aqui termina as opções do case.
+	esac	#Termina o switch/case.
+}	#Função complementos_sistema, fim.
+#-------------------------------------------------------------------------------------------------------------------------------
+# Funções de instalação
+#-------------------------------------------------------------------------------------------------------------------------------
 instalar_nmap()	#Função instalar_nmap, inicio.
 {
 	clear	#Limpa a tela.
@@ -430,6 +477,19 @@ instalar_netbeans()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	ides	#Retorno a função navegadores de sub-menu.
+}
+instalar_java()
+{
+	clear	#Limpa a tela.
+	sudo add-apt-repository ppa:webupd8team/java 
+	sudo apt-get update
+	sudo apt-get install -y oracle-java8-installer
+	clear	#Limpa a tela.
+	echo "Java instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	complementos_sistema	#Retorno a função complementos_sistema de sub-menu.
 }
 retira_conta()	#Função retira_conta, inicio.
 {
