@@ -77,6 +77,16 @@ principal()	#Função principal, inicio.
 	complementos_sistema	#Chama a função complementos_sistema.
 	;;	#Fim desta opção do case.
 	
+	10)
+	clear	#Limpa a tela.
+	configuracoes_sistema	#Chama a função configuracoes_sistema.
+	;;	#Fim desta opção do case.
+	
+	11)
+	clear	#Limpa a tela.
+	utilitarios	#Chama a função utilitarios.
+	;;	#Fim desta opção do case.
+	
 	12)
 	clear	#Limpa a tela.
 	retira_conta	#Chama a função retira_conta.
@@ -242,9 +252,9 @@ navegadores()
 	echo ""	#Espaçamento para melhorar a visualização.
 	#Aqui começa as opções.
 	echo "[1] Instalar Google Chrome"
-	echo "[2] Instalar Mozilla Firefox"
-	echo "[3] Instalar Opera"
-	echo "[4] Instalar Tor Browser"
+	#echo "[2] Instalar Mozilla Firefox"
+	#echo "[3] Instalar Opera"
+	#echo "[4] Instalar Tor Browser"
 	echo "[5] Voltar"
 	#Aqui termina as opções.
 
@@ -350,9 +360,9 @@ complementos_sistema()
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
 }	#Função complementos_sistema, fim.
-configuracoes_sistema()
-{
-}
+#configuracoes_sistema()
+#{
+#}
 utilitarios()
 {
 	clear	#Limpa a tela.
@@ -362,7 +372,9 @@ utilitarios()
 	#Aqui começa as opções.
 	echo "[1] Instalar TeamViewer"
 	echo "[2] Instalar VLC"
-	echo "[3] Voltar"
+	echo "[3] Instalar Lamp-Server"
+	echo "[4] Instalar PHPMyAdmin"
+	echo "[5] Voltar"
 	#Aqui termina as opções.
 
 	read opcaoUtilitarios	#Aguarda o usuário escolher uma opção.
@@ -377,8 +389,18 @@ utilitarios()
 	clear	#Limpa a tela.
 	instalar_vlc	#Chama a função instalar_teamviewer.
 	;;	#Fim desta opção do case.
-
+	
 	3)
+	clear	#Limpa a tela.
+	instalar_lampserver	#Chama a função instalar_lamp.
+	;;	#Fim desta opção do case.
+	
+	4)
+	clear	#Limpa a tela.
+	instalar_phpmyadmin	#Chama a função instalar_lamp.
+	;;	#Fim desta opção do case.
+
+	5)
 	clear	#Limpa a tela.
 	principal	#Chama a função principal.
 	;;	#Fim desta opção do case
@@ -554,6 +576,29 @@ instalar_vlc()
 	sudo apt install vlc -y
 	clear	#Limpa a tela.
 	echo "VLC instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	utilitarios	#Retorno a função utilitarios de sub-menu.
+}
+instalar_lampserver()
+{
+	clear	#Limpa a tela.
+	sudo apt install lamp-server^ -y
+	sudo chmod 777 /var/www/html
+	clear	#Limpa a tela.
+	echo "Lamp Server instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	utilitarios	#Retorno a função utilitarios de sub-menu.
+}
+instalar_phpmyadmin()
+{
+	clear	#Limpa a tela.
+	sudo apt install phpmyadmin -y
+	clear	#Limpa a tela.
+	echo "PHPMyAdmin instalado com sucesso"	#Infomação ao usuário.
 	echo ""	#Espaçamento para melhorar a visualização.
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
