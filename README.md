@@ -1,14 +1,10 @@
 # Script de pós instalação para Ubuntu 16.04 LTS
 
-Devido as infinitas possibilidades que possuímos hoje no mundo Linux, existe um número massante de tutoriais e blogs informando como instalar tal programa ou como fazer tal tarefa no sistema. Com isso, crio este projeto para levar uma certa assistência a quem está chegando no mundo Linux ou até os mais experientes as vezes se perguntam o que instalar.
+Devido as infinitas possibilidades que possuímos hoje no mundo GNU/Linux, existe um número massante de tutoriais e blogs informando como instalar tal programa ou como efetuar tal tarefa dentro do sistema operacional. Com isso, foi criado este projeto, com intuito de auxiliar a quem está chegando no mundo GNU/Linux ou até os mais experientes que por vezes se perguntam o que instalar e aonde procurar.
 
-Para Microsoft Windows, encontramos ferramentas como Ninite em que você seleciona o que deseja instalar e ele instala automaticamente.
-O script contido neste repositório terá por intuito fazer exatamente isso, você seleciona a opção que deseja e ele fará.
-Esse é um projeto novo, e será muito bem recebidas as alterações que posteriormente outros usuários venham a requerir.
+O script contido neste repositório possui inumeros comandos para instalação, na qual o usuário poderá navegar e escolher ou não executa-los. Este é um projeto novo, e serão muito bem recebidas as alterações que posteriormente outros desenvolvedores venham a propor.
 
-P: O que possui hoje o script?
-
-R: Hoje o script tem as seguintes funções:
+Até o momento a estrutura do script possui as seguintes funções:
 
 [1] Atualização de repositórios;
 
@@ -52,15 +48,20 @@ R: Hoje o script tem as seguintes funções:
     
 [8] Retirada da conta de convidado;
 
-Para executar este script, após o download você abrirá o Terminal e irá procurar o script na pasta de Downloads com o seguinte comando:
+# Para utilizar o script.
 
-cd /home/seu-usuario/Downloads 
+Para executar este script, após o download você abrirá o Terminal e irá navegar até o diretorio aonde se encontra o script baixado, como no exemplo:
 
-Obs.: "seu-usuario" refere-se ao nome de usuário que você possui
+$ cd /home/seu-usuario/Downloads 
 
-bash script-inicial.bash
+Obs.: "seu-usuario" refere-se ao nome de seu proprio usuário.
 
-E escolha a opção que deseja.
+Modifique as permissoes do script para execução:
 
-Última atualização em: 29/10/2016 às 13:24 (Horário brasileiro)
+$ sudo chmod +x script-inicial.bash
 
+Execute o script e escolha a opção que deseja:
+
+$ ./script-inicial.bash
+
+Última atualização em: 31/10/2016 às 13:24 (Hora oficial de Brasilia).
