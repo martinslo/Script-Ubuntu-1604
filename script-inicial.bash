@@ -335,7 +335,8 @@ complementos_sistema()
 	echo ""	#Espaçamento para melhorar a visualização.
 	#Aqui começa as opções.
 	echo "[1] Instalar Java"
-	echo "[2] Voltar"
+	echo "[2] Instalar JDK"
+	echo "[3] Voltar"
 	#Aqui termina as opções.
 
 	read opcaoComplementos	#Aguarda o usuário escolher uma opção.
@@ -347,6 +348,11 @@ complementos_sistema()
 	;;	#Fim desta opção do case.
 
 	2)
+	clear	#Limpa a tela.
+	instalar_jdk	#Chama a função instalar_jdk.
+	;;	#Fim desta opção do case.
+
+	3)
 	clear	#Limpa a tela.
 	principal	#Chama a função principal.
 	;;	#Fim desta opção do case
@@ -550,6 +556,26 @@ instalar_java()
 	sudo apt-get install -y oracle-java8-installer
 	clear	#Limpa a tela.
 	echo "Java instalado com sucesso"	#Infomação ao usuário.
+	echo ""	#Espaçamento para melhorar a visualização.
+	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
+	read pause	#Comando para aguardar interação[ENTER].
+	complementos_sistema	#Retorno a função complementos_sistema de sub-menu.
+}
+instalar_jdk()
+{
+	clear	#Limpa a tela.
+	if[ uname -m -eq 'x86_64' ]
+	then
+	wget - http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz
+	tar -vzxf jdk-8u111-linux-x64.tar.gz
+	sudo rm jdk-8u111-linux-x64 /usr/lib/jvm
+	else
+	wget - http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-i586.tar.gz
+	tar -vzxf jdk-8u111-linux-i586.tar.gz
+	sudo rm jdk-8u111-linux-i586 /usr/lib/jvm
+	fi
+	clear	#Limpa a tela.
+	echo "JDK instalado com sucesso"	#Infomação ao usuário.
 	echo ""	#Espaçamento para melhorar a visualização.
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
