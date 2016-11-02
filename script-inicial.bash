@@ -24,7 +24,7 @@ principal()	#Função principal, inicio.
 	echo "[7] Navegadores"
 	echo "[8] IDE's"
 	echo "[9] Complementos do sistema"
-	echo "[10] Configurações do sistema"
+	#echo "[10] Configurações do sistema"
 	echo "[11] Utilitários"
 	echo "[12] Retirar conta de convidado"
 	#Aqui termina as opções.
@@ -335,7 +335,7 @@ complementos_sistema()
 	echo ""	#Espaçamento para melhorar a visualização.
 	#Aqui começa as opções.
 	echo "[1] Instalar Java"
-	echo "[2] Instalar JDK"
+	#echo "[2] Instalar JDK"
 	echo "[3] Voltar"
 	#Aqui termina as opções.
 
@@ -564,8 +564,7 @@ instalar_java()
 instalar_jdk()
 {
 	clear	#Limpa a tela.
-	if[ uname -m -eq 'x86_64' ]
-	then
+	if [ uname -m -eq 'x86_64' ]; then
 	wget - http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz
 	tar -vzxf jdk-8u111-linux-x64.tar.gz
 	sudo rm jdk-8u111-linux-x64 /usr/lib/jvm
