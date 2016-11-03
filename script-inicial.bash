@@ -152,8 +152,8 @@ atualiza_tudo()	#Função atualiza_tudo, inicio.
 atualizadb()	#Função atualizadb, inicio.
 {
 	clear	#Limpa a tela.
-	sudo updatedb -v
-	sudo update-grub && sudo update-grub2
+	sudo updatedb -v	#Comando para atualizar o banco de dados e de referencias dentro do S.O.
+	sudo update-grub && sudo update-grub2	#Comando para atualizar o grub e grub2 após updates e upgrades.
 	clear	#Limpa a tela.
 	echo "As referências do sistema foram reassociadas com sucesso"	#Infomação ao usuário.
 	echo ""	#Espaçamento para melhorar a visualização.
@@ -244,7 +244,7 @@ ferramentas_rede()	#Função ferramentas_rede, inicio
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
 }	#Função ferramentas_rede, fim.
-navegadores()
+navegadores()	#Função navegadores, inicio.
 {
 	clear	#Limpa a tela.
 	echo "Navegadores"	#Escreve na tela as opções para uso.
@@ -294,7 +294,7 @@ navegadores()
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
 }	#Função navegadores, fim.
-ides()
+ides()	#Função ides, inicio.
 {
 	clear	#Limpa a tela.
 	echo "IDE's"	#Escreve na tela as opções para uso.
@@ -326,8 +326,8 @@ ides()
 	;;	#Fim desta opção do case
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
-}	#Função navegadores, fim.
-complementos_sistema()
+}	#Função ides, fim.
+complementos_sistema()	#Função complementos_sistema, inicio.
 {
 	clear	#Limpa a tela.
 	echo "Complementos do sistema"	#Escreve na tela as opções para uso.
@@ -369,7 +369,7 @@ complementos_sistema()
 #configuracoes_sistema()
 #{
 #}
-utilitarios()
+utilitarios()	#Função utilitários, inicio.
 {
 	clear	#Limpa a tela.
 	echo "Utilitários"	#Escreve na tela as opções para uso.
@@ -419,7 +419,7 @@ utilitarios()
 	;;	#Fim desta opção do case
 	#Aqui termina as opções do case.
 	esac	#Termina o switch/case.
-}	#Função complementos_sistema, fim.
+}	#Função utilitários, fim.
 #-------------------------------------------------------------------------------------------------------------------------------
 # Funções de instalação
 #-------------------------------------------------------------------------------------------------------------------------------
@@ -445,7 +445,7 @@ instalar_zenmap()	#Função instalar_znmap, inicio.
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_zenmap, fim.
-instalar_putty()
+instalar_putty()	#Função putty, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-get install -y putty
@@ -456,7 +456,7 @@ instalar_putty()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_putty, fim.
-instalar_iptraf()
+instalar_iptraf()	#Função instalar_iptraf, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-get install -y iptraf
@@ -467,7 +467,7 @@ instalar_iptraf()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_iptraf, fim.
-instalar_tcpdump()
+instalar_tcpdump()	#Função instalar_tcpdump, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-get install -y tcpdump
@@ -478,7 +478,7 @@ instalar_tcpdump()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_tcpdump, fim.
-instalar_vnstat()
+instalar_vnstat()	#Função instalar_vnstat, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-get install -y vnstat
@@ -489,7 +489,7 @@ instalar_vnstat()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_vnstat, fim.
-instalar_iperf()
+instalar_iperf()	#Função instalar_iperf, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-get install -y iperf
@@ -500,7 +500,7 @@ instalar_iperf()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_iperf, fim.
-instalar_wireshark()
+instalar_wireshark()	#Função instalar_wireshark, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-get -y install wireshark wireshark-common wireshark-dev
@@ -511,7 +511,7 @@ instalar_wireshark()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_wireshark, fim.
-instalar_remmina()
+instalar_remmina()	#Função instalar_remmina, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
@@ -524,7 +524,7 @@ instalar_remmina()
 	read pause	#Comando para aguardar interação[ENTER].
 	ferramentas_rede	#Retorno a função ferramentas_rede de sub-menu.
 }	#Função instalar_remmina, fim.
-instalar_googlechrome()
+instalar_googlechrome()	#Função instalar_googlechrome, inicio.
 {
 	clear	#Limpa a tela.
    	wget - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -535,8 +535,8 @@ instalar_googlechrome()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	navegadores	#Retorno a função navegadores de sub-menu.
-}
-instalar_netbeans()
+}	#Função instalar_googlechrome, fim.
+instalar_netbeans()	#Função instalar_netbeans, inicio.
 {
 	clear	#Limpa a tela.
 	wget - http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-linux.sh
@@ -547,8 +547,8 @@ instalar_netbeans()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	ides	#Retorno a função navegadores de sub-menu.
-}
-instalar_java()
+}	#Função instalar_netbeans, fim.
+instalar_java()	#Função instalar_java, inicio.
 {
 	clear	#Limpa a tela.
 	sudo add-apt-repository ppa:webupd8team/java -y
@@ -560,8 +560,8 @@ instalar_java()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	complementos_sistema	#Retorno a função complementos_sistema de sub-menu.
-}
-instalar_jdk()
+}	#Função instalar_java, fim.
+instalar_jdk()	#Função instalar_jdk, inicio.
 {
 	clear	#Limpa a tela.
 	if [ uname -m -eq 'x86_64' ]; then
@@ -579,8 +579,8 @@ instalar_jdk()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	complementos_sistema	#Retorno a função complementos_sistema de sub-menu.
-}
-instalar_teamviewer()
+}	#Função instalar_jdk, fim.
+instalar_teamviewer()	#Função instalar_teamviewer, inicio.
 {
 	clear	#Limpa a tela.
 	wget - https://download.teamviewer.com/download/teamviewer_i386.deb | sudo dpkg -i teamviewer_i386.deb
@@ -592,8 +592,8 @@ instalar_teamviewer()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	utilitarios	#Retorno a função utilitarios de sub-menu.
-}
-instalar_vlc()
+}	#Função instalar_teamviewer, fim.
+instalar_vlc()	#Função instalar_vlc, inicio.
 {
 	clear	#Limpa a tela.
 	sudo add-apt-repository ppa:videolan/stable-daily -y
@@ -605,20 +605,20 @@ instalar_vlc()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	utilitarios	#Retorno a função utilitarios de sub-menu.
-}
-instalar_lampserver()
+}	#Função instalar_vlc, fim.
+instalar_lampserver()	#Função instalar_lampserver, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt install lamp-server^ -y
-	sudo chmod 777 /var/www/html
+	sudo chmod 777 /var/www/html -R
 	clear	#Limpa a tela.
 	echo "Lamp Server instalado com sucesso"	#Infomação ao usuário.
 	echo ""	#Espaçamento para melhorar a visualização.
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	utilitarios	#Retorno a função utilitarios de sub-menu.
-}
-instalar_phpmyadmin()
+}	#Função instalar_lampserver, fim.
+instalar_phpmyadmin()	#Função instalar_phphmyadmin, inicio.
 {
 	clear	#Limpa a tela.
 	sudo apt install phpmyadmin -y
@@ -628,7 +628,7 @@ instalar_phpmyadmin()
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	utilitarios	#Retorno a função utilitarios de sub-menu.
-}
+}	#Função instalar_phphmyadmin, fim.
 retira_conta()	#Função retira_conta, inicio.
 {
 	clear	#Limpa a tela.
@@ -639,7 +639,7 @@ retira_conta()	#Função retira_conta, inicio.
 	echo "Pressione ENTER para continuar"	#Solicitação de interação para prosseguir.
 	read pause	#Comando para aguardar interação[ENTER].
 	principal	#Retorno a função principal de menus.
-}	#Função instalar_znmap, fim.
+}	#Função retira_conta, fim.
 opcao_desconhecida()	#Função opcao_desconhecida, inicio.
 {
 	clear	#Limpa a tela.
